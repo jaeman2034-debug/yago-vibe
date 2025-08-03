@@ -1,0 +1,5 @@
+[33m8e4c904[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Fix: Remove hardcoded API key for security
+[33mce4d9f1[m Deploy: Update project for production deployment
+[33ma89a045[m Add GitHub Pages deployment configuration
+[33m62a010c[m Fix file upload modal and update React Router to v6
+[33m1ebb0f1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m 🎉 yago-vibe 초기 프로젝트 세팅
