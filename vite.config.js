@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/yago-vibe/', // GitHub Pages 주소에 맞춰 설정
+  base: '/yago-vibe/', // GitHub Pages 주소에 맞춰 설정 (jaeman2034-debug 계정)
   build: {
     outDir: 'dist', // Vite 표준 빌드 디렉토리 사용
     sourcemap: true,
