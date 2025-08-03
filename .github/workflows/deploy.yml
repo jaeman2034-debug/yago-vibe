@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
@@ -15,18 +15,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the app
-        run: npm run build  # ⚠️ Vite 쓴다면 수정 필요
+        run: npm run build
 
       - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build  # ⚠️ Vite라면 ./dist 로 바꿔야 함
+          path: ./dist  # vite.config.js에서 outDir: 'dist'로 설정
 
   deploy:
     needs: build
@@ -40,4 +46,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 
+        uses: actions/deploy-pages@v4 
